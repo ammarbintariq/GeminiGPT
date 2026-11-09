@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ui-bg: var(--ui-bg);
+  --color-ui-surface: var(--ui-surface);
+  --color-ui-text: var(--ui-text);
+  --color-ui-muted: var(--ui-muted);
+  --color-ui-border: var(--ui-border);
+  --color-ui-accent: var(--ui-accent);
+  --color-ui-accent-soft: var(--ui-accent-soft);
+  --color-ui-hover: var(--ui-hover);
+}
+
+:root {
+  color-scheme: light;
+  --ui-bg: #f4f6ff;
+  --ui-surface: #ffffff;
+  --ui-text: #191b35;
+  --ui-muted: #626985;
+  --ui-border: #dfe3f3;
+  --ui-accent: #5546e8;
+  --ui-accent-soft: #ebe9ff;
+  --ui-hover: #e8ebfa;
+  --ui-glow: rgba(151, 143, 255, 0.3);
+  --ui-shadow: rgba(41, 47, 105, 0.12);
+}
+
+[data-theme="dark"] {
+  color-scheme: dark;
+  --ui-bg: #090b12;
+  --ui-surface: #171b27;
+  --ui-text: #f5f6ff;
+  --ui-muted: #c0c6d8;
+  --ui-border: #3b455d;
+  --ui-accent: #c0b5ff;
+  --ui-accent-soft: #292640;
+  --ui-hover: #293247;
+  --ui-glow: rgba(124, 108, 255, 0.2);
+  --ui-shadow: rgba(0, 0, 0, 0.48);
+}
+
+body {
+  margin: 0;
+  background: var(--ui-bg);
+}
+
+.app-shell {
+  background:
+    radial-gradient(ellipse at 68% 30%, var(--ui-glow), transparent 44%),
+    var(--ui-bg);
+  color: var(--ui-text);
+  transition: background-color 200ms ease, color 200ms ease;
+}
+
+.suggestion-card {
+  background: linear-gradient(145deg, var(--ui-surface), var(--ui-accent-soft));
+}
+
+.conversation-user {
+  border: 1px solid var(--ui-border);
+  border-radius: 18px;
+  background: var(--ui-accent-soft);
+  padding: 16px;
+}
+
+.conversation-response {
+  border: 1px solid var(--ui-border);
+  border-radius: 18px;
+  background: var(--ui-surface);
+  padding: 16px;
+  box-shadow: 0 6px 20px var(--ui-shadow);
+}
+
+[data-theme="dark"] .theme-invert {
+  filter: invert(1);
+}
